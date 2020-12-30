@@ -1,0 +1,72 @@
+body {
+  background-color: #292929;
+
+}
+
+.topContainer {
+  background-color: #121212;
+  padding: 0;
+}
+
+.topContainer div {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+}
+
+#topLogo {
+  max-width: 50px;
+  margin: 10px;
+}
+
+.topButtonsContainer {
+  padding: 0;
+  margin: 0;
+}
+
+.md-primary {
+  color: #6a6a6a !important;
+  background-color: transparent !important;
+  padding: 0 !important;
+  margin-right: 5px !important;
+
+}
+
+#middleContainer {
+  background-color: #ffffff;
+  border-radius: 5px;
+  margin: 15px 65px 5px;
+  padding: 5px 10px 0;
+  height: inherit;
+}
+
+#topMiddleContainer {
+  padding: 0;
+  margin: 0;
+  background-color: #292929;
+  color: #ffffff;
+  border-radius: 2px;
+
+}
+
+.camera-menu-container {
+  background-color: #292929 !important;
+  margin-top: 5px !important;
+  padding: 0 5px !important;
+}
+
+.insideMenuButtons {
+  background-color: #292929 !important;
+  color: #ffffff !important;
+  text-align: center !important;
+
+}
+
+.videoPlayer {
+  min-width: 20em;
+  min-height: auto;
+}

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html ng-app="face-six-medApp" lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <!-- Main CSS file -->
+  <link rel="stylesheet" href="style.css" type="text/css">
+  <!-- AngularJS -->
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.js"></script>
+  <script src="app.js"></script>
+  <!-- AngularJS Material CSS -->
+  <link rel="stylesheet" href="https://gitcdn.xyz/cdn/angular/bower-material/v1.2.2/angular-material.css">
+  <script src="https://material.angularjs.org/1.2.2/docs.css"></script>
+  <!-- AngularJS Material JS -->
+  <script src="https://gitcdn.xyz/cdn/angular/bower-material/v1.2.2/angular-material.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular-animate.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular-aria.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular-route.min.js"></script>
+  <script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-114/svg-assets-cache.js"></script>
+
+
+  <!-- fonts -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,400italic">
+  <!-- icons -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
+
+  <title>Face-Six_MED</title>
+</head>
+<header ng-controller="MainCtrl">
+  {{1+1}}
+  <div class="topContainer">
+    <div>
+      <img id="topLogo" src="src/img/logo-med.png" alt="Face-Six - The Face Recognition Software Company"/> </div>
+    <div
+        class="topButtonsContainer">
+      <mdcontent>
+        <section>
+          <md-button class="md-primary">
+            <md-icon md-font-set="material-icons">subscriptions</md-icon>
+            LIVE
+          </md-button>
+          <md-button class="md-primary">
+            <md-icon md-font-set="material-icons">local_offer</md-icon>
+            PARTICIPANTS
+          </md-button>
+          <md-button class="md-primary">
+            <md-icon md-font-set="material-icons">alarm_on</md-icon>
+            EVENTS
+          </md-button>
+          <md-button class="md-primary">
+            <md-icon md-font-set="material-icons">masks</md-icon>
+            VISITS
+          </md-button>
+          <md-button class="md-primary">
+            <md-icon md-font-set="material-icons">group</md-icon>
+            GROUPS
+          </md-button>
+          <md-button class="md-primary">
+            <md-icon md-font-set="material-icons">person_search</md-icon>
+            SEARCH
+          </md-button>
+          <md-button class="md-primary">
+            <md-icon md-font-set="material-icons">report</md-icon>
+            REPORTS
+          </md-button>
+          <md-button class="md-primary">
+            <md-icon md-font-set="material-icons">admin_panel_settings</md-icon>
+            ADMINISTRATION
+          </md-button>
+        </section>
+      </mdcontent>
+    </div>
+  </div>
+</header>
+
+<body>
+
+  <div id="middleContainer" class="middleBlock">
+    <div id="topMiddleContainer" class="middleBlock">
+      <!-- Camera menu -->
+      <div class="camera-menu" ng-cloak>
+        <div layout="column">
+          <md-menu md-position-mode="target-right bottom">
+            <md-button class="cameraMenuButton" ng-mouseenter="$mdMenu.open()"> SELECT CAMERA
+              <md-icon md-font-set="material-icons">videocam</md-icon>
+            </md-button>
+            <md-menu-content class="camera-menu-container" width="2" ng-mouseleave="$mdMenu.close()">
+              <md-menu-item ng-repeat="item in [1, 2, 3]">
+                <md-button class="insideMenuButtons">
+                  Camera {{item}}
+                </md-button>
+              </md-menu-item>
+            </md-menu-content>
+          </md-menu>
+        </div>
+      </div>
+      <!-- * -->
+    </div>
+    <div class="videoPlayer">
+      <!-- TODO Replace this ... -->
+      <script src="src/js/player.js"></script>
+    </div>
+  </div>
+</body>
+
+</html>

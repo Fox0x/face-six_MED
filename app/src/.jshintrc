@@ -1,0 +1,22 @@
+{
+  "undef" : true,
+  "unused": true,
+  "nocomma" : false,
+  "trailing" : true,
+  "curly" : true,
+  "strict" : true,
+  "browser" : true,
+  "devel" : true,
+  "esversion" : 8,
+  "node" : true,
+  "bitwise": true,
+  "eqeqeq": true,
+  "latedef": true,
+  "noarg": true,
+  "smarttabs": true,
+  "multistr": true,
+  "globals": {
+    "face-six-medApp": false,
+    "angular": false
+  }
+}
