@@ -7,15 +7,18 @@ body {
   background-color: #121212;
   padding: 0;
   display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
 }
 
 .topContainer div {
   padding: 0;
   margin: 0;
-  list-style: none;
-  align-items: center;
-  justify-content: center;
+}
 
+.topContainer .material-icons {
+  color: #6a6a6a !important;
 }
 
 #topLogo {
@@ -24,7 +27,7 @@ body {
 }
 
 .topButtonsContainer {
-  align-self: center;
+
 }
 
 .md-primary {
@@ -70,7 +73,33 @@ body {
   vertical-align: top;
   display: inline-block;
 }
+
 .videoPlayer video {
   /*for applying video filters*/
 
+}
+
+table {
+  font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+  text-align: center;
+  /*border-collapse: collapse;*/
+
+  background: #121212;
+  border-radius: 20px;
+  margin-top: 15px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+th {
+  font-size: 22px;
+  font-weight: 300;
+  padding: 15px;
+  border-bottom: 2px solid #F56433;
+  color: #F56433;
+}
+
+td {
+  padding: 10px;
+  color: #8D8173;
 }

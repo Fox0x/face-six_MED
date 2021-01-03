@@ -1,12 +1,14 @@
 <!DOCTYPE html>
+
 <html dir="ltr" lang="en" ng-app="face-six-medApp">
+
 
 <head>
     <meta charset="utf-8">
     <!-- Main CSS file -->
     <link href="style.css" rel="stylesheet" type="text/css">
     <!-- AngularJS -->
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.js"></script>
+    <script src="lib/angular/angular.js"></script>
     <script src="app.js"></script>
     <!-- AngularJS Material CSS -->
     <link href="https://gitcdn.xyz/cdn/angular/bower-material/v1.2.2/angular-material.css" rel="stylesheet">
@@ -15,7 +17,7 @@
     <script src="https://gitcdn.xyz/cdn/angular/bower-material/v1.2.2/angular-material.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular-animate.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular-aria.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular-route.min.js"></script>
+    <script src="lib/angular-route/angular-route.js"></script>
     <script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-114/svg-assets-cache.js"></script>
 
 
@@ -31,8 +33,7 @@
     <div class="topContainer">
         <div>
             <img alt="Face-Six - The Face Recognition Software Company" id="topLogo" src="src/img/logo-med.png"/></div>
-        <div
-                class="topButtonsContainer">
+        <div class="topButtonsContainer">
             <mdcontent>
                 <section>
                     <md-button class="md-primary">
@@ -70,18 +71,19 @@
                 </section>
             </mdcontent>
         </div>
+        <!--End of top buttons-->
     </div>
 </header>
 
 <body>
 
-<div class="middleBlock" id="middleContainer">
+<div class="middleBlock" id="middleContainer" ng-show="false" ng-switch-when="live">
     <div class="middleBlock" id="topMiddleContainer">
         <!-- Camera menu -->
         <div class="camera-menu" ng-cloak>
             <div layout="column">
                 <md-menu md-position-mode="target-right bottom">
-<!--                    TODO: Узнать, почему скрывается вертикальный скролл-->
+                    <!--TODO: Узнать, почему скрывается вертикальный скролл-->
                     <md-button class="cameraMenuButton" ng-mouseenter="$mdMenu.open()"> SELECT CAMERA
                         <md-icon md-font-set="material-icons">videocam</md-icon>
                     </md-button>
@@ -97,10 +99,47 @@
         </div>
         <!-- * -->
     </div>
-    <div class="videoPlayer">
+    <div class="videoPlayer" ng-controller="SelectionCtrl">
         <video autoplay playsinline></video>
         <script src="src/js/player.js"></script>
     </div>
+    <!-- * -->
+
+</div>
+<div class="listOfParticipants" ng-show="true" ng-switch-when="participants">
+    <!--    TODO: реализовать поиск-->
+    <!--    <input type="search" >-->
+    <table align="center" id="participantsTable" ng-controller="ParticipantsCtrl">
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Second Name</th>
+            <th>Age</th>
+            <th>Phone</th>
+            <th>Group</th>
+            <th>Last Visit</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr class="animate-repeat" ng-repeat="p in participants">
+            <td>
+                <a href="#" style="color: #8d8173">#{{p.id}}</a>
+            </td>
+            <td>{{p.name}}</td>
+            <td>{{p.sName}}</td>
+            <td>{{p.age}}</td>
+            <td>
+                <a href="tel:{{p.phone}}">
+                    <md-tooltip md-direction="bottom">Call {{p.phone}}</md-tooltip>
+                    <md-icon md-font-set="material-icons" style="color: #8d8173">call</md-icon>
+                </a>
+            </td>
+            <td>{{p.group}}</td>
+            <td>{{p.lastVisit}}</td>
+        </tr>
+        </tbody>
+    </table>
 </div>
 </body>
 

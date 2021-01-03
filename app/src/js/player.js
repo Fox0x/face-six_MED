@@ -9,6 +9,7 @@ function gotLocalMediaStream(mediaStream) {
     localStream = mediaStream;
     localVideo.srcObject = mediaStream;
 }
+
 function handleLocalMediaStreamError(error) {
     console.log('navigator.getUserMedia error: ', error);
 }
